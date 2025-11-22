@@ -22,8 +22,8 @@ const PromptCard: React.FC<PromptCardProps> = ({ item }) => {
 
   return (
     <div className="group bg-surface border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full">
-      {/* Image Section - DİKEY YAPILDI (aspect-[2/3]) */}
-      <div className="relative aspect-[2/3] overflow-hidden">
+      {/* Image Section - DİKEY (aspect-[2/3]) */}
+      <div className="relative aspect-[2/3] overflow-hidden flex-shrink-0">
         <img 
           src={item.imageUrl} 
           alt={item.title}
@@ -32,15 +32,16 @@ const PromptCard: React.FC<PromptCardProps> = ({ item }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
         
         <div className="absolute bottom-0 left-0 p-3 w-full">
-          <h3 className="font-bold text-white text-sm md:text-base leading-tight mb-1 drop-shadow-lg">
+          <h3 className="font-bold text-white text-sm md:text-base leading-tight mb-1 drop-shadow-lg truncate">
             {item.title}
           </h3>
         </div>
       </div>
 
-      <div className="p-3 flex flex-col gap-2 flex-grow">
+      {/* Content Section - GÜNCELLENDİ: Scrollbar ve Max-Height eklendi */}
+      <div className="p-3 flex flex-col gap-2 flex-grow max-h-[240px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent pr-1">
         {item.prompts.map((prompt, index) => (
-          <div key={index} className="bg-black/40 rounded-lg p-2 border border-white/5 hover:border-white/10 transition-colors">
+          <div key={index} className="bg-black/40 rounded-lg p-2 border border-white/5 hover:border-white/10 transition-colors flex-shrink-0">
             <div className="flex justify-between items-center mb-1">
               <span className="text-[10px] font-bold text-accent tracking-wider uppercase">
                 {isLink(prompt) ? 'BAĞLANTI' : `PROMPT ${index + 1}`}
