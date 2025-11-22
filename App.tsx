@@ -37,10 +37,10 @@ const App: React.FC = () => {
 
   const renderHome = () => (
     <div className="flex flex-col items-center min-h-[80vh] px-4 pt-8 animate-fade-in w-full max-w-md mx-auto">
-      {/* Profil Bölümü - LİNK GÜNCELLENDİ */}
+      {/* Profil Bölümü - LİNK GÜNCELLENDİ (YENİ SOLUK VERSİYON) */}
       <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl mb-6 group hover:border-accent transition-colors duration-500">
         <img 
-          src="https://res.cloudinary.com/ddfp55a2s/image/upload/v1763847243/kare_kopya_xrewup.png" 
+          src="https://res.cloudinary.com/ddfp55a2s/image/upload/v1763847573/soluk_jyck7v.jpg" 
           alt="Profil" 
           className="w-full h-full object-cover"
         />
