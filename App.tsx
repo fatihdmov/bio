@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import PromptCard from './PromptCard';
 import { Page } from './types';
 import { APP_NAME, PROMPT_LIBRARY, SOCIAL_LINKS, APP_DESCRIPTION } from './constants';
-import { Instagram, Mail, Globe, ArrowRight, Library, User, GraduationCap, Clock } from 'lucide-react';
+import { Instagram, Mail, Globe, ArrowRight, Library, User, GraduationCap, Clock, ArrowLeft } from 'lucide-react';
 
 const App: React.FC = () => {
   const [activePage, setActivePage] = useState<Page>(Page.HOME);
 
-  // Determine icon component dynamically
+  // Sayfa her değiştiğinde en tepeye kaydır
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activePage]);
+
+  // Dinamik ikon seçimi
   const getIcon = (name: string) => {
     switch (name) {
       case 'Instagram': return <Instagram size={20} />;
@@ -17,12 +22,25 @@ const App: React.FC = () => {
     }
   };
 
+  // Ortak Geri Dön Butonu Bileşeni
+  const BackButton = () => (
+    <button 
+      onClick={() => setActivePage(Page.HOME)}
+      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6 group"
+    >
+      <div className="p-2 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+        <ArrowLeft size={20} />
+      </div>
+      <span className="font-medium">Ana Sayfaya Dön</span>
+    </button>
+  );
+
   const renderHome = () => (
     <div className="flex flex-col items-center min-h-[80vh] px-4 pt-8 animate-fade-in w-full max-w-md mx-auto">
-      {/* Profile Section */}
+      {/* Profil Bölümü - LİNK GÜNCELLENDİ */}
       <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl mb-6 group hover:border-accent transition-colors duration-500">
         <img 
-          src="https://picsum.photos/400/400?grayscale" 
+          src="https://res.cloudinary.com/ddfp55a2s/image/upload/v1763847243/kare_kopya_xrewup.png" 
           alt="Profil" 
           className="w-full h-full object-cover"
         />
@@ -37,7 +55,7 @@ const App: React.FC = () => {
         </p>
       </div>
 
-      {/* Social Links */}
+      {/* Sosyal Linkler */}
       <div className="flex justify-center gap-4 mb-12 w-full">
         {SOCIAL_LINKS.map((link) => (
           <a
@@ -51,7 +69,7 @@ const App: React.FC = () => {
         ))}
       </div>
 
-      {/* Main Navigation Buttons */}
+      {/* Ana Navigasyon Butonları */}
       <div className="w-full space-y-4">
         <button
           onClick={() => setActivePage(Page.PROMPTS)}
@@ -113,18 +131,14 @@ const App: React.FC = () => {
   const renderPrompts = () => {
     return (
       <div className="max-w-7xl mx-auto pt-6 pb-24 px-2 md:px-4 animate-slide-up">
+        <div className="px-2">
+          <BackButton />
+        </div>
         <div className="flex flex-col mb-6 px-2">
           <h2 className="text-2xl md:text-3xl font-bold text-white">Prompt Kütüphanesi</h2>
           <p className="text-gray-400 text-xs md:text-sm mt-1">Instagram Reels videolarımda kullandığım tüm promptlar.</p>
         </div>
 
-        {/* 
-          Updated Grid Layout:
-          - grid-cols-2 on mobile (fits 4+ items on screen)
-          - grid-cols-3 on tablet
-          - grid-cols-4 on large screens
-          - Gap reduced to gap-3 for tighter look
-        */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {PROMPT_LIBRARY.map(item => (
             <PromptCard key={item.id} item={item} />
@@ -142,6 +156,10 @@ const App: React.FC = () => {
 
   const renderEducation = () => (
     <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 animate-slide-up text-center">
+      <div className="w-full max-w-md flex justify-start px-4 mb-8">
+        <BackButton />
+      </div>
+      
       <div className="relative mb-8">
         <div className="absolute -inset-4 bg-accent/10 rounded-full blur-xl"></div>
         <div className="relative p-8 bg-surface rounded-full border border-white/10 shadow-2xl">
@@ -163,6 +181,7 @@ const App: React.FC = () => {
 
   const renderAbout = () => (
     <div className="max-w-2xl mx-auto pt-12 pb-24 px-4 animate-slide-up">
+      <BackButton />
       <h2 className="text-3xl font-bold mb-8 border-l-4 border-accent pl-4 text-white">Hakkımda</h2>
       <div className="prose prose-invert prose-lg text-gray-300">
         <p className="mb-6">
