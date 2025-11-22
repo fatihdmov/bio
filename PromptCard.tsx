@@ -22,7 +22,8 @@ const PromptCard: React.FC<PromptCardProps> = ({ item }) => {
 
   return (
     <div className="group bg-surface border border-white/10 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full">
-      <div className="relative aspect-[4/3] overflow-hidden">
+      {/* Image Section - DİKEY YAPILDI (aspect-[2/3]) */}
+      <div className="relative aspect-[2/3] overflow-hidden">
         <img 
           src={item.imageUrl} 
           alt={item.title}
