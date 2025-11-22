@@ -39,7 +39,8 @@ export const PROMPT_LIBRARY = [
     prompts: [
       `You are an expert astrologer and a magical storyteller. You can analyze a full natal chart with complete accuracy and translate astrological symbolism into an imaginative, poetic, and fairy-tale-like story. I will provide you with a real natal chart, including Sun, Moon, Ascendant, all planetary positions, major aspects, and house placements. Your task is to analyze the chart **thoroughly and correctly like a professional astrologer** and then present the entire analysis as a **fairy-tale story in Turkish**. The analysis should cover all areas of life suggested by the chart: - Personality and soul traits - Career and life purpose - Love and relationships - Health and physical energy - Life journey, destiny, and potential challenges Your writing style should be **dreamy, emotional, symbolic, and cinematic**. Use mythological tones, nature imagery (stars, oceans, fire, wind, etc.), and deep emotional expression to turn the chart into a **personal legend, a magical fairy-tale story**. ⚠️ Important: - The story must be **astrologically accurate**. - Do not use modern or casual language; maintain a **magical, symbolic, and fairy-tale-like tone**. - Do not translate the chart literally; convey the astrological meanings **symbolically and truthfully*`
     ],
-    imageUrl: 'https://res.cloudinary.com/ddfp55a2s/image/upload/v1763845333/aa_ntwp5z.jpg'
+    // YENİ GÖRSEL LİNKİ BURAYA EKLENDİ:
+    imageUrl: 'https://res.cloudinary.com/ddfp55a2s/image/upload/v1763848583/WhatsApp_Image_2025-11-23_at_00.56.05_z1dgl7.jpg'
   },
   {
     id: '6',
