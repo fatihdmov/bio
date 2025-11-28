@@ -12,6 +12,41 @@ export const SOCIAL_LINKS: SocialLink[] = [
 // ARTIK HATA VERMEDEN YAYINLAMASI LAZIM
 export const PROMPT_LIBRARY = [
   {
+    id: '10',
+    title: "Arabanı İstanbul'a Işınla",
+    date: '2025-11-29',
+    tags: ['Araba', 'İstanbul', 'Google Veo', 'Video'],
+    prompts: [
+      `{
+  "instruction_type": "BACKGROUND_REPLACEMENT_WITH_SUBJECT_FIDELITY",
+  "model_version": "Gemini 3 Pro Image (Nano Banana Pro)",
+  
+  "reference_input": {
+    "type": "uploaded_image",
+    "subject": "my_car",
+    "constraint": "HARD_LOCK",
+    "description": "Strict subject fidelity required. The LICENSE PLATE TEXT must be preserved pixel-perfect with zero modifications, hallucinations, or redraw attempts."
+  },
+
+  "scene_composition": {
+    "aspect_ratio": "9:16",
+    "framing": "Native 9:16 vertical framing. Vehicle must be oriented front-right.",
+    "environment": {
+      "location": "Istanbul skyline — Galata Tower, Bosphorus, Historical Peninsula",
+      "lighting": "Sunset — warm orange glow, long shadows, city reflecting golden tones",
+      "atmosphere": "Realistic urban depth, light haze over the Bosphorus, photorealistic skyline"
+    }
+  },
+
+  "generation_prompt": "Create a hyper-realistic 9:16 vertical cinematic photo placing the [reference_car] in front of the REAL Istanbul skyline during sunset. The background must look like an authentic photograph of Istanbul: Galata Tower, historical peninsula outlines, Bosphorus layers, and warm orange evening sky.\\n\\nCRITICAL EXECUTION RULES:\\n1. *LICENSE PLATE LOCK: The plate MUST remain EXACT. No new digits, no blur, no font changes.\\n2. **REAL CITY INTEGRATION: Use a realistic, non-stylized Istanbul skyline — it must look like a real photo.\\n3. **LIGHTING: Apply sunset reflections (warm oranges + soft shadows) while keeping plate crisp and readable.\\n4. **PERSPECTIVE: Align the car naturally to an urban ground plane, front-right orientation only.\\n5. **VERTICAL COMPOSITION*: Scene must be designed as a true vertical 9:16 layout from the beginning.",
+
+  "negative_prompt": "altered license plate, changed digits, blurred text, fantasy skyline, AI-looking buildings, cartoonish colors, horizontal crop, distorted car geometry"
+}`,
+      `Use the uploaded image.Make a 5–6 second ULTRA-REALISTIC micro arc shot.The CAR must stay perfectly CENTERED and FIXED — no rotation, no movement, no shape change, no plate change.CAMERA:A very small ARC movement, about 20 cm left-to-right (or right-to-left).Smooth, slow, cinematic curve around the front of the car.ONLY the camera moves. The car stays locked in world space.ENVIRONMENT:No timelapse. Boats, sky and city must stay real-time.Keep the exact sunset Istanbul look.OUTPUT:Photorealistic micro-arc shot with the car perfectly stable in the middle of the frame.`
+    ],
+    imageUrl: 'https://res.cloudinary.com/ddfp55a2s/image/upload/v1764365399/THUMBNAIL_frfly4.jpg'
+  },
+  {
     id: '9',
     title: 'Gemini 1 Yıl Bedava (Öğrenci)',
     date: '2025-01-20',
@@ -39,7 +74,6 @@ export const PROMPT_LIBRARY = [
     prompts: [
       `You are an expert astrologer and a magical storyteller. You can analyze a full natal chart with complete accuracy and translate astrological symbolism into an imaginative, poetic, and fairy-tale-like story. I will provide you with a real natal chart, including Sun, Moon, Ascendant, all planetary positions, major aspects, and house placements. Your task is to analyze the chart **thoroughly and correctly like a professional astrologer** and then present the entire analysis as a **fairy-tale story in Turkish**. The analysis should cover all areas of life suggested by the chart: - Personality and soul traits - Career and life purpose - Love and relationships - Health and physical energy - Life journey, destiny, and potential challenges Your writing style should be **dreamy, emotional, symbolic, and cinematic**. Use mythological tones, nature imagery (stars, oceans, fire, wind, etc.), and deep emotional expression to turn the chart into a **personal legend, a magical fairy-tale story**. ⚠️ Important: - The story must be **astrologically accurate**. - Do not use modern or casual language; maintain a **magical, symbolic, and fairy-tale-like tone**. - Do not translate the chart literally; convey the astrological meanings **symbolically and truthfully*`
     ],
-    // YENİ GÖRSEL LİNKİ BURAYA EKLENDİ:
     imageUrl: 'https://res.cloudinary.com/ddfp55a2s/image/upload/v1763848583/WhatsApp_Image_2025-11-23_at_00.56.05_z1dgl7.jpg'
   },
   {
@@ -70,7 +104,7 @@ export const PROMPT_LIBRARY = [
     tags: ['Sanat', 'Müze', 'Portre'],
     prompts: [
       `KADIN İÇİN: Using the attached image as reference for the woman's face and appearance, create a highly realistic, cinematic, and photographic scene in a modern art gallery where she is standing slightly to the side or at a distance, seen from behind, looking at a large oil painting portrait of herself on the wall. The entire painting must be fully visible — she should not block, cover, or overlap any part of the artwork. The painting should depict the same woman in a realistic, expressive oil-painting style, showing her face and upper body with textured brush strokes and muted colors. The gallery wall is clean and white, with a soft, dramatic spotlight illuminating the artwork, creating a professional, cinematic exhibition atmosphere. Include realistic lighting, subtle shadows, depth of field, and natural reflections. Vertical composition, ultra-detailed, photorealistic.`,
-      `ERKEK İÇİN: Using the attached image as reference for the man's face and appearance, create a highly realistic, cinematic, and photographic scene in a modern art gallery where he is standing slightly to the side or at a distance, seen from behind, looking at a large oil painting portrait of himself on the wall. The entire painting must be fully visible — he should not block, cover, or overlap any part of the artwork. The painting should depict the same man in a realistic, expressive oil-painting style, showing her face and upper body with textured brush strokes and muted colors. The gallery wall is clean and white, with a soft, dramatic spotlight illuminating the artwork, creating a professional, cinematic exhibition atmosphere. Include realistic lighting, subtle shadows, depth of field, and natural reflections. Vertical composition, ultra-detailed, photorealistic.`
+      `ERKEK İÇİN: Using the attached image as reference for the man's face and appearance, create a highly realistic, cinematic, and photographic scene in a modern art gallery where he is standing slightly to the side or at a distance, seen from behind, looking at a large oil painting portrait of herself on the wall. The entire painting must be fully visible — he should not block, cover, or overlap any part of the artwork. The painting should depict the same man in a realistic, expressive oil-painting style, showing her face and upper body with textured brush strokes and muted colors. The gallery wall is clean and white, with a soft, dramatic spotlight illuminating the artwork, creating a professional, cinematic exhibition atmosphere. Include realistic lighting, subtle shadows, depth of field, and natural reflections. Vertical composition, ultra-detailed, photorealistic.`
     ],
     imageUrl: 'https://res.cloudinary.com/ddfp55a2s/image/upload/v1763845278/7_m6k1h1.jpg'
   },
