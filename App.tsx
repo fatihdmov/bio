@@ -179,19 +179,19 @@ const App: React.FC = () => {
     </div>
   );
 
-  const renderAbout = () => (
+ const renderAbout = () => (
     <div className="max-w-2xl mx-auto pt-12 pb-24 px-4 animate-slide-up">
       <BackButton />
       <h2 className="text-3xl font-bold mb-8 border-l-4 border-accent pl-4 text-white">Hakkımda</h2>
       <div className="prose prose-invert prose-lg text-gray-300">
         <p className="mb-6">
-          Merhaba, ben <strong>Fatih</strong>. Yapay Zeka ve görsel hikaye anlatıcılığının kesişim noktasında içerikler üreten bir dijital sanatçıyım.
+          Lise ve üniversiteyi fotoğrafçılık üzerine okudum ve ardından çeşitli medya şirketlerinde ve freelance çalışarak hem prodüksiyon hem dijital içerik tarafında çeşitli deneyimler kazandım.
         </p>
         <p className="mb-6">
-          Yolculuğum geleneksel fotoğrafçılıkla başladı, ancak üretken yapay zekanın gelişi yaratıcılıkta yeni bir boyut açtı. Midjourney, Runway Gen-2 ve Stable Diffusion gibi araçları kullanarak sinematik kareler, hareketli video varlıkları ve sürreal ortamlar yaratma konusunda uzmanlaşıyorum.
+          Bugün öğrendiğim her şeyi, pratik şekilde uygulanabilir hale getirip Instagram’da paylaşarak aktarmaya çalışıyorum.
         </p>
         <p className="mb-6">
-          Bu web sitesi topluluğum için bir merkez niteliğinde. Burada Instagram reels videolarımda kullandığım promptları bulabilir, iş akışım hakkında bilgi edinebilir ve yakında yayınlayacağım eğitim setlerine ulaşabilirsiniz.
+          Yapay zekayı hem kişisel projelerimde hem de ticari işlerde aktif olarak kullanıyorum. Gemini, Midjourney, Kling ve Sora gibi araçlarla gerçekçi sahneler, sinematik videolar ve hızlı sonuç veren AI çözümleri üretiyorum. Bunun yanında n8n ile otomasyonlar kurarak iş akışımı hızlandırmayı ve üretimi daha sistemli hâle getirmeyi seviyorum.
         </p>
       </div>
 
